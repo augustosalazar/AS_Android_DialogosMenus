@@ -7,6 +7,14 @@
     <string name="tituloPrincipal">Dialogos y Menus</string>
     <string name="stringBoton1">Notificación</string>
     <string name="stringBoton2">Notificación OK / NOK</string>
-    <string name="stringBoton3">Menu PopUp</string>
-
+    <string name="stringBoton3">Menu Clickable</string>
+    <string name="red">Rojo</string>
+    <string name="blue">Azul</string>
+    <string name="dialog_message">El Mensaje</string>
+    <string name="dialog_title">El Titulo del Mensaje</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="textoDialogBox">El dialogo</string>
+    <string name="tituloDialogBox">El titulo</string>
+    <string name="aceptar">Aceptar</string>
 </resources>
