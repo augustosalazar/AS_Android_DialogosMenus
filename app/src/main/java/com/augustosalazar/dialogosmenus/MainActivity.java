@@ -83,7 +83,7 @@ public class MainActivity extends ActionBarActivity {
     public void BotonOnClickNotificacionSimple(View view) {
 
 
-        Log.d(TAG, "BotonOnClickNotificacionSimple");
+        Log.d(TAG, "Boton On Click NotificacionSimple");
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
