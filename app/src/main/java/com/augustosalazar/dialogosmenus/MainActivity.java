@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -47,7 +48,7 @@ public class MainActivity extends ActionBarActivity {
     public void BotonOnClickMenuClickable(View view) {
         PopupMenu popup = new PopupMenu(this, view);
         MenuInflater inflater = popup.getMenuInflater();
-        inflater.inflate(R.menu.menu_checkablemenu, popup.getMenu());
+        //inflater.inflate(R.menu.menu_checkablemenu, popup.getMenu());
         popup.show();
     }
 
@@ -57,23 +58,64 @@ public class MainActivity extends ActionBarActivity {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
+
         // Add the buttons
-        builder = builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                // User clicked OK button
-            }
-        });
         builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 // User cancelled the dialog
             }
         });
 
+        builder = builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User clicked OK button
+            }
+        });
+
+
         // Set other dialog properties
         builder.setTitle(R.string.tituloDialogBox);
         builder.setMessage(R.string.textoDialogBox);
         builder.setIcon(R.drawable.ic_launcher);
         builder.setCancelable(false);
+
+        // Create the AlertDialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+
+    public void BotonOnClickNotificacionOkNokItems(View view) {
+
+        Log.d(TAG, "BotonOnClickNotificacionOkNok");
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        // Set other dialog properties
+        builder.setTitle(R.string.tituloDialogBox);
+        builder.setItems(R.array.dias, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(),"Item "+which,Toast.LENGTH_SHORT).show();
+                    }
+            });
+                builder.setIcon(R.drawable.ic_launcher);
+        builder.setCancelable(false);
+        // Add the buttons
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User cancelled the dialog
+            }
+        });
+
+        builder = builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User clicked OK button
+            }
+        });
+
+
+
 
         // Create the AlertDialog
         AlertDialog dialog = builder.create();
@@ -104,5 +146,49 @@ public class MainActivity extends ActionBarActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
 
+    }
+
+    public void BotonOnClickNotificacionOkNokMultiItems(View view) {
+
+
+        Log.d(TAG, "BotonOnClickNotificacionOkNok");
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        // Set other dialog properties
+        builder.setTitle(R.string.tituloDialogBox);
+        builder.setMultiChoiceItems(R.array.dias,null,new DialogInterface.OnMultiChoiceClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+                Toast.makeText(getApplicationContext(),"Item "+which + " is "+isChecked,Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.setIcon(R.drawable.ic_launcher);
+        builder.setCancelable(false);
+        // Add the buttons
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User cancelled the dialog
+            }
+        });
+
+        builder = builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User clicked OK button
+            }
+        });
+
+
+
+
+        // Create the AlertDialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+    }
+
+    public void BotonOnClickNotificacionOkNokCustom(View view) {
+        AlertFragment alertFrag = new AlertFragment();
+        alertFrag.show(getSupportFragmentManager(),"alertFrag");
     }
 }

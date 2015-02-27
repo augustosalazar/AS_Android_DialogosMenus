@@ -43,6 +43,35 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="0dp"
+            android:text="@string/stringBoton4"
+            android:id="@+id/button4"
+            android:layout_weight="1"
+            android:onClick="BotonOnClickNotificacionOkNokItems"
+            />
+
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:text="@string/stringBoton5"
+            android:id="@+id/button5"
+            android:layout_weight="1"
+            android:onClick="BotonOnClickNotificacionOkNokMultiItems"
+            />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:text="@string/stringBoton6"
+            android:id="@+id/button6"
+            android:layout_weight="1"
+            android:onClick="BotonOnClickNotificacionOkNokCustom"
+            />
+
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
             android:text="@string/stringBoton3"
             android:id="@+id/button3"
             android:layout_weight="1"

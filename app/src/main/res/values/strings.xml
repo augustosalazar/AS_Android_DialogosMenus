@@ -17,4 +17,16 @@
     <string name="textoDialogBox">El dialogo</string>
     <string name="tituloDialogBox">El titulo</string>
     <string name="aceptar">Aceptar</string>
+    <string name="stringBoton4">Notificación Lista</string>
+    <string name="stringBoton5">NOTIFICACIÓN MULTI OPCION</string>
+
+    <string-array name="dias">
+        <item>Dia 1</item>
+        <item>Dia 2</item>
+        <item>Dia 3</item>
+    </string-array>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="stringBoton6">NOTIFICACIÓN CUSTOM</string>
+
 </resources>
