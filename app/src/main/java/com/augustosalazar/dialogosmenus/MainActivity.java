@@ -30,6 +30,8 @@ public class MainActivity extends ActionBarActivity {
         return true;
     }
 
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -37,18 +39,42 @@ public class MainActivity extends ActionBarActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id){
+            case R.id.action_settings:
+                Toast.makeText(this, "action_settings", Toast.LENGTH_SHORT).show();
+                return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
+
+
     public void BotonOnClickMenuClickable(View view) {
         PopupMenu popup = new PopupMenu(this, view);
+
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+
+                int id = menuItem.getItemId();
+
+                switch (id){
+                    case R.id.item_comedy:
+                        Toast.makeText(getApplicationContext(), "Comedy Clicked", Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.item_movies:
+                        Toast.makeText(getApplicationContext(), "Movies Clicked", Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.item_music:
+                        Toast.makeText(getApplicationContext(), "Music Clicked", Toast.LENGTH_SHORT).show();
+                        return true;
+                }
+                return false;
+            }});
+
+
         MenuInflater inflater = popup.getMenuInflater();
-        //inflater.inflate(R.menu.menu_checkablemenu, popup.getMenu());
+        inflater.inflate(R.menu.menu_popup, popup.getMenu());
         popup.show();
     }
 
@@ -191,4 +217,5 @@ public class MainActivity extends ActionBarActivity {
         AlertFragment alertFrag = new AlertFragment();
         alertFrag.show(getSupportFragmentManager(),"alertFrag");
     }
+
 }
