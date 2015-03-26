@@ -140,9 +140,6 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-
-
-
         // Create the AlertDialog
         AlertDialog dialog = builder.create();
         dialog.show();
